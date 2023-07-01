@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Basic Calculator</h1>
+    <h4>21CE125 - Kaivan Shah</h4>
+    Enter number 1 :
+    <input id="input" placeholder="number" onblur="blurHandle()" /> Enter number
+    2 : <input id="input2" placeholder="number" onblur="blurHandle()" />
+    <p class="ans1"></p>
+    <p class="ans"></p>
+    <p class="error"></p>
+    <script>
+      function blurHandle() {
+        const input = document.querySelector("#input");
+        const input2 = document.querySelector("#input2");
+        const a = document.querySelector(".ans");
+        const b = document.querySelector(".error");
+        const c = document.querySelector(".ans1");
+        a.style.color = "red";
+        b.style.color = "red";
+
+        let sum = parseInt(input.value) + parseInt(input2.value);
+        let sub = parseInt(input.value) - parseInt(input2.value);
+        let mul = parseInt(input.value) * parseInt(input2.value);
+        let div1 = parseInt(input.value) / parseInt(input2.value);
+
+        c.innerHTML =
+          "Addition : " +
+          sum +
+          " Subtraction : " +
+          sub +
+          " Division : " +
+          div1 +
+          " Multiplication : " +
+          mul;
+
+        if (input.value === "") {
+          a.innerHTML = "<h1>Please enter the number 1</h1>";
+        }
+
+        if (input2.value === "") {
+          a.innerHTML = "<h1>Please enter the number 2</h1>";
+        }
+
+        if (isNaN(input)) {
+          b.innerHTML = "<h1>Please enter only number</h1>";
+        }
+
+        if (isNaN(input2)) {
+          b.innerHTML = "<h1>Please enter only number</h1>";
+        }
+      }
+    </script>
+  </body>
+</html>

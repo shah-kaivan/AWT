@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Information</title>
+  </head>
+  <body>
+    <script>
+      let CSPIT = {
+        departments: ["CE", "CSE", "EC", "ME", "CL", "EE", "IT"],
+        year_of_establishment: 2000,
+        location: "Changa",
+        getdetails: function () {
+          console.log(CSPIT.departments);
+          console.log(CSPIT.year_of_establishment);
+          console.log(CSPIT.location);
+        },
+      };
+
+      CSPIT.CE = function () {
+        this.students = 190;
+        this.teachers = 30;
+      };
+
+      let ce = new CSPIT.CE();
+      for (let x in ce) {
+        console.log(x + ":" + ce[x]);
+      }
+
+      for (let y in CSPIT) {
+        console.log(y + " : " + CSPIT[y]);
+      }
+    </script>
+  </body>
+</html>

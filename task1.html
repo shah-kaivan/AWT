@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Basic Calculator</h1>
+    <h4>21CE125 - Kaivan Shah</h4>
+    Enter number 1 : <input id="input" placeholder="number" required /> Enter
+    number 2 : <input id="input2" placeholder="number" />
+    <p class="ans"></p>
+    <p class="error"></p>
+    <button class="sum">sum</button>
+    <button class="sub">sub</button>
+    <button class="mul">mul</button>
+    <button class="div">div</button>
+    <script>
+      const input = document.querySelector("#input");
+      const input2 = document.querySelector("#input2");
+      const sum1 = document.querySelector(".sum");
+      const sub1 = document.querySelector(".sub");
+      const mul1 = document.querySelector(".mul");
+      const div1 = document.querySelector(".div");
+      const a = document.querySelector(".ans");
+      const b = document.querySelector(".error");
+      a.style.color = "red";
+      b.style.color = "red";
+      //isNaN(input) || isNaN(input2)?a.innerHTML = "Please enter a number":
+
+      sum1.addEventListener("click", () => {
+        if (input.value === "" || input2.value === "") {
+          a.innerHTML = "<h1>Please enter the number</h1>";
+        } else {
+          if (isNaN(input) || isNaN(input2)) {
+            b.innerHTML = "<h1>Please enter only number</h1>";
+          } else {
+            let val = parseInt(input.value) + parseInt(input2.value);
+            a.innerHTML = val;
+          }
+        }
+      });
+      sub1.addEventListener("click", () => {
+        if (input.value === "" || input2.value === "") {
+          a.innerHTML = "<h1>Please enter the number</h1>";
+        } else {
+          if (isNaN(input) || isNaN(input2)) {
+            b.innerHTML = "<h1>Please enter only number</h1>";
+          } else {
+            let val = parseInt(input.value) - parseInt(input2.value);
+            a.innerHTML = val;
+          }
+        }
+      });
+      mul1.addEventListener("click", () => {
+        if (input.value === "" || input2.value === "") {
+          a.innerHTML = "<h1>Please enter the number</h1>";
+        } else {
+          if (isNaN(input) || isNaN(input2)) {
+            b.innerHTML = "<h1>Please enter only number</h1>";
+          } else {
+            let val = parseInt(input.value) * parseInt(input2.value);
+            a.innerHTML = val;
+          }
+        }
+      });
+      div1.addEventListener("click", () => {
+        if (input.value === "" || input2.value === "") {
+          a.innerHTML = "<h1>Please enter the number</h1>";
+        } else {
+          if (isNaN(input) || isNaN(input2)) {
+            b.innerHTML = "<h1>Please enter only number</h1>";
+          } else {
+            let val = parseInt(input.value) / parseInt(input2.value);
+            a.innerHTML = val;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
